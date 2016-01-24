@@ -2,10 +2,10 @@
 from flask import Flask, url_for, render_template, request, \
     redirect, abort, session, g, flash, Markup
 import helpers
-from abapi import helpers
+from abapi.helpers import *
 from abapi import app
 
-@app.route('/event', defaults={"path": ""})
+@app.route('/event', defaults={"whatever": ""})
 @app.route('/event/<path:whatever>')
 def event_listener(whatever):
     app.logger.info(whatever)
@@ -29,7 +29,7 @@ def event_listener(whatever):
 
 @app.route('/')
 def index():
-    return render_template("base.html")
+    return render_template('base.html')
 
 
 @app.errorhandler(404)

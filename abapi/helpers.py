@@ -4,7 +4,7 @@ def sessionid_check(sesid):
   """
   validate that this session id is correct
   """
-  return string(sesid)
+  return repr(sesid)
 
 def stamp_check(stamp):
   """
@@ -18,3 +18,5 @@ def client_check(client):
 def item_check(item):
   pass
 
+def parse_request(the_request):
+  return (1,2,3,4)
